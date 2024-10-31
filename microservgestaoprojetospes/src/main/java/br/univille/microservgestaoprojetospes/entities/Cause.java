@@ -6,7 +6,7 @@ import org.springframework.data.annotation.GenerationType;
 import com.azure.spring.data.cosmos.core.mapping.Container;
 import com.azure.spring.data.cosmos.core.mapping.PartitionKey;
 
-import java.util.UUID;
+import java.util.String;
 
 @Container(containerName = "cause", autoCreateContainer = true)
 public class Cause {
@@ -16,7 +16,7 @@ public class Cause {
     private Long cdCause;
     private String causeTitle;
     private String causeSubs;
-    private UUID cdProblem;
+    private String cdProblem;
 
     public Long getCdCause() {
         return cdCause;
@@ -42,11 +42,11 @@ public class Cause {
         this.causeSubs = causeSubs;
     }
 
-    public UUID getCdProblem() {
+    public String getCdProblem() {
         return cdProblem;
     }
 
-    public void setCdProblem(UUID cdProblem) {
+    public void setCdProblem(String cdProblem) {
         this.cdProblem = cdProblem;
     }
 }

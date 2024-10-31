@@ -7,7 +7,7 @@ import com.azure.spring.data.cosmos.core.mapping.Container;
 import com.azure.spring.data.cosmos.core.mapping.PartitionKey;
 
 import java.sql.Date;
-import java.util.UUID;
+import java.util.String;
 
 @Container(containerName = "activity", autoCreateContainer = true)
 public class Activity {

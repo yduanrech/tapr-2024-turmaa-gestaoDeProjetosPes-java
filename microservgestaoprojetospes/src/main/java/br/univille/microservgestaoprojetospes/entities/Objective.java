@@ -6,7 +6,7 @@ import org.springframework.data.annotation.GenerationType;
 import com.azure.spring.data.cosmos.core.mapping.Container;
 import com.azure.spring.data.cosmos.core.mapping.PartitionKey;
 
-import java.util.UUID;
+import java.util.String;
 
 @Container(containerName = "objective", autoCreateContainer = true)
 public class Objective {
@@ -16,7 +16,7 @@ public class Objective {
     private Long cdObjective;
     private String objectiveTitle;
     private String objectiveSubs;
-    private UUID cdProject;
+    private String cdProject;
 
     public Long getCdObjective() {
         return cdObjective;
@@ -42,11 +42,11 @@ public class Objective {
         this.objectiveSubs = objectiveSubs;
     }
 
-    public UUID getCdProject() {
+    public String getCdProject() {
         return cdProject;
     }
 
-    public void setCdProject(UUID cdProject) {
+    public void setCdProject(String cdProject) {
         this.cdProject = cdProject;
     }
 }

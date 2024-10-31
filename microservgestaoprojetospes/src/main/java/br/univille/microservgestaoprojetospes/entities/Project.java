@@ -6,7 +6,7 @@ import org.springframework.data.annotation.GenerationType;
 import com.azure.spring.data.cosmos.core.mapping.Container;
 import com.azure.spring.data.cosmos.core.mapping.PartitionKey;
 
-import java.util.UUID;
+import java.util.String;
 
 @Container(containerName = "project", autoCreateContainer = true)
 public class Project {
@@ -17,11 +17,11 @@ public class Project {
     private String projectTitle;
     private String projectSubs;
     private statusEnum status;
-    private UUID cdTeam;
-    private UUID cdCourse;
-    private UUID cdProblem;
-    private UUID cdObjective;
-    private UUID cdActivity;
+    private String cdTeam;
+    private String cdCourse;
+    private String cdProblem;
+    private String cdObjective;
+    private String cdActivity;
 
     public Long getCdProject() {
         return cdProject;
@@ -55,43 +55,43 @@ public class Project {
         this.status = status;
     }
 
-    public UUID getCdTeam() {
+    public String getCdTeam() {
         return cdTeam;
     }
 
-    public void setCdTeam(UUID cdTeam) {
+    public void setCdTeam(String cdTeam) {
         this.cdTeam = cdTeam;
     }
 
-    public UUID getCdCourse() {
+    public String getCdCourse() {
         return cdCourse;
     }
 
-    public void setCdCourse(UUID cdCourse) {
+    public void setCdCourse(String cdCourse) {
         this.cdCourse = cdCourse;
     }
 
-    public UUID getCdProblem() {
+    public String getCdProblem() {
         return cdProblem;
     }
 
-    public void setCdProblem(UUID cdProblem) {
+    public void setCdProblem(String cdProblem) {
         this.cdProblem = cdProblem;
     }
 
-    public UUID getCdObjective() {
+    public String getCdObjective() {
         return cdObjective;
     }
 
-    public void setCdObjective(UUID cdObjective) {
+    public void setCdObjective(String cdObjective) {
         this.cdObjective = cdObjective;
     }
 
-    public UUID getCdActivity() {
+    public String getCdActivity() {
         return cdActivity;
     }
 
-    public void setCdActivity(UUID cdActivity) {
+    public void setCdActivity(String cdActivity) {
         this.cdActivity = cdActivity;
     }
 }

@@ -6,7 +6,7 @@ import org.springframework.data.annotation.GenerationType;
 import com.azure.spring.data.cosmos.core.mapping.Container;
 import com.azure.spring.data.cosmos.core.mapping.PartitionKey;
 
-import java.util.UUID;
+import java.util.String;
 
 @Container(containerName = "team", autoCreateContainer = true)
 public class Team {
@@ -14,8 +14,8 @@ public class Team {
     @PartitionKey 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long cdTeam;
-    private UUID cdProject;
-    private UUID cdScholarshipStudent;
+    private String cdProject;
+    private String cdScholarshipStudent;
 
     public Long getCdTeam() {
         return cdTeam;
@@ -25,19 +25,19 @@ public class Team {
         this.cdTeam = cdTeam;
     }
 
-    public UUID getCdProject() {
+    public String getCdProject() {
         return cdProject;
     }
 
-    public void setCdProject(UUID cdProject) {
+    public void setCdProject(String cdProject) {
         this.cdProject = cdProject;
     }
 
-    public UUID getCdScholarshipStudent() {
+    public String getCdScholarshipStudent() {
         return cdScholarshipStudent;
     }
 
-    public void setCdScholarshipStudent(UUID cdScholarshipStudent) {
+    public void setCdScholarshipStudent(String cdScholarshipStudent) {
         this.cdScholarshipStudent = cdScholarshipStudent;
     }
 }
