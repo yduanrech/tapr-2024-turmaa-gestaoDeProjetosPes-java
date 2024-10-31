@@ -1,4 +1,4 @@
-package br.univille.microservgestaoprojetospes;
+package br.univille.microservGestaoProjetosPes;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
