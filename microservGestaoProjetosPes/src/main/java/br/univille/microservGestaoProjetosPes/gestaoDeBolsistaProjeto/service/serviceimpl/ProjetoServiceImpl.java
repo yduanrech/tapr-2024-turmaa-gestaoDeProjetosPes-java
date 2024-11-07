@@ -29,11 +29,6 @@ public class ProjetoServiceImpl
     
         @Override
         public Projeto save(Projeto projeto) {
-            return repository.save(projeto);
-        }
-    
-        @Override
-        public Projeto save(Projeto projeto) {
             this.projeto = projeto;
             // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'save'");
