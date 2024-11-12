@@ -1,28 +1,29 @@
-package br.univille.microservgestaoprojetospes.entities;
+package br.univille.microservgestaoprojetospesapplication.entities;
+
+import java.util.UUID;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.GeneratedValue;
-import org.springframework.data.annotation.GenerationType;
 import com.azure.spring.data.cosmos.core.mapping.Container;
+import com.azure.spring.data.cosmos.core.mapping.GeneratedValue;
 import com.azure.spring.data.cosmos.core.mapping.PartitionKey;
 
-import java.util.String;
-
 @Container(containerName = "objective", autoCreateContainer = true)
-public class Objective {
+public class Objective
+{
     @Id
-    @PartitionKey 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long cdObjective;
+    @PartitionKey
+    @GeneratedValue
+    private String cdObjective;
+
     private String objectiveTitle;
     private String objectiveSubs;
     private String cdProject;
 
-    public Long getCdObjective() {
+    public String getCdObjective() {
         return cdObjective;
     }
 
-    public void setCdObjective(Long cdObjective) {
+    public void setCdObjective(String cdObjective) {
         this.cdObjective = cdObjective;
     }
 

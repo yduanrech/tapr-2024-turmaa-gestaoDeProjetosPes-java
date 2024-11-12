@@ -1,19 +1,20 @@
-package br.univille.microservgestaoprojetospes.entities;
+package br.univille.microservgestaoprojetospesapplication.entities;
+
+import java.util.UUID;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.GeneratedValue;
-import org.springframework.data.annotation.GenerationType;
 import com.azure.spring.data.cosmos.core.mapping.Container;
+import com.azure.spring.data.cosmos.core.mapping.GeneratedValue;
 import com.azure.spring.data.cosmos.core.mapping.PartitionKey;
 
-import java.util.String;
-
 @Container(containerName = "project", autoCreateContainer = true)
-public class Project {
+public class Project
+{
     @Id
-    @PartitionKey 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long cdProject;
+    @PartitionKey
+    @GeneratedValue
+    private String cdProject;
+
     private String projectTitle;
     private String projectSubs;
     private statusEnum status;
@@ -23,11 +24,11 @@ public class Project {
     private String cdObjective;
     private String cdActivity;
 
-    public Long getCdProject() {
+    public String getCdProject() {
         return cdProject;
     }
 
-    public void setCdProject(Long cdProject) {
+    public void setCdProject(String cdProject) {
         this.cdProject = cdProject;
     }
 

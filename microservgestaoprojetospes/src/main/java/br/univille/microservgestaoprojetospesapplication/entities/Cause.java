@@ -1,28 +1,29 @@
-package br.univille.microservgestaoprojetospes.entities;
+package br.univille.microservgestaoprojetospesapplication.entities;
+
+import java.util.UUID;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.GeneratedValue;
-import org.springframework.data.annotation.GenerationType;
 import com.azure.spring.data.cosmos.core.mapping.Container;
+import com.azure.spring.data.cosmos.core.mapping.GeneratedValue;
 import com.azure.spring.data.cosmos.core.mapping.PartitionKey;
 
-import java.util.String;
-
 @Container(containerName = "cause", autoCreateContainer = true)
-public class Cause {
+public class Cause
+{
     @Id
-    @PartitionKey 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long cdCause;
+    @PartitionKey
+    @GeneratedValue
+    private String cdCause;
+
     private String causeTitle;
     private String causeSubs;
     private String cdProblem;
 
-    public Long getCdCause() {
+    public String getCdCause() {
         return cdCause;
     }
 
-    public void setCdCause(Long cdCause) {
+    public void setCdCause(String cdCause) {
         this.cdCause = cdCause;
     }
 

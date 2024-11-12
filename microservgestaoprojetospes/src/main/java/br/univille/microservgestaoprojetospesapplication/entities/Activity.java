@@ -1,30 +1,32 @@
-package br.univille.microservgestaoprojetospes.entities;
+package br.univille.microservgestaoprojetospesapplication.entities;
+
+import java.util.UUID;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.GeneratedValue;
-import org.springframework.data.annotation.GenerationType;
 import com.azure.spring.data.cosmos.core.mapping.Container;
+import com.azure.spring.data.cosmos.core.mapping.GeneratedValue;
 import com.azure.spring.data.cosmos.core.mapping.PartitionKey;
 
 import java.sql.Date;
-import java.util.String;
 
 @Container(containerName = "activity", autoCreateContainer = true)
-public class Activity {
+public class Activity
+{
     @Id
-    @PartitionKey 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long cdActivity;
+    @PartitionKey
+    @GeneratedValue
+    private String cdActivity;
+
     private String activityTitle;
     private String activitySubs;
     private Date dtStart;
     private Date dtEnd;
 
-    public Long getCdActivity() {
+    public String getCdActivity() {
         return cdActivity;
     }
 
-    public void setCdActivity(Long cdActivity) {
+    public void setCdActivity(String cdActivity) {
         this.cdActivity = cdActivity;
     }
 
