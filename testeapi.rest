@@ -1,3 +1,11 @@
-###Bucar todos os alunos
+TESTE JAVA
+###Buscar todos os alunos
+GET http://localhost:8080/api/v1/projetos
 
-GET http://localhost:8080/api/vi/projetos
+### Inserir um aluno
+POST http://localhost:8080/api/v1/projetos
+Content-Type: application/json
+
+{
+    "nome": "zezinho"
+}
