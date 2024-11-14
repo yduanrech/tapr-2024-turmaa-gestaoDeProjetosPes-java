@@ -9,9 +9,24 @@
             "projectName": "microservgestaodeprojetospesapplication",
             "args": "",
             "envFile": "${workspaceFolder}/.env",
-            "vmArgs": ["-Djavax.net.ssl.trustStore=/workspaces/tapr-2024-turmab-GESTAODEPROJETOSPES-java/native.jks",
-                       "-Djavax.net.ssl.trustStorePassword=univille"]
-
+            "vmArgs": [
+                "-Djavax.net.ssl.trustStore=/workspaces/tapr-2024-turmaa-GESTAODEPROJETOSPES-java/native.jks",
+                "-Djavax.net.ssl.trustStorePassword=univille"
+            ]
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MicroservGestaoProjetosPesApplication<microservgestaoprojetospes>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "br.univille.microservgestaoprojetospesapplication.MicroservGestaoProjetosPesApplication",
+            "projectName": "microservgestaoprojetospes",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": [
+                "-Djavax.net.ssl.trustStore=/workspaces/tapr-2024-turmaa-GESTAODEPROJETOSPES-java/native.jks",
+                "-Djavax.net.ssl.trustStorePassword=univille"
+            ]
         }
     ]
 }

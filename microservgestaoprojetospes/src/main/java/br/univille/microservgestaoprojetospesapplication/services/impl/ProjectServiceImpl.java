@@ -6,12 +6,15 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.univille.microservgestaoprojetospesapplication.entities.Objective;
+import br.univille.microservgestaoprojetospesapplication.entities.Problem;
 import br.univille.microservgestaoprojetospesapplication.entities.Project;
+import br.univille.microservgestaoprojetospesapplication.entities.Team;
 import br.univille.microservgestaoprojetospesapplication.repositories.ProjectRepository;
-import br.univille.microservgestaoprojetospesapplication.services.ProjectSrvices;
+import br.univille.microservgestaoprojetospesapplication.services.ProjectService;
 
 @Service
-public class ProjectServiceImpl implements ProjectServices
+public class ProjectServiceImpl implements ProjectService
 {
     @Autowired
     private ProjectRepository projectRepository;
@@ -25,20 +28,49 @@ public class ProjectServiceImpl implements ProjectServices
         return listProjects;
     }
 
-    @Override
     public Project createNewProject(Team team, Objective objective, Problem problem) {
         Project newProject = new Project();
-        newProject.setTeam(team);
-        newProject.setObjective(objective);
-        newProject.setProblem(problem);
+        // newProject.setCdTeam(team);
+        // newProject.setCdObjective(objective);
+        // newProject.setCdProblem(problem);
         return projectRepository.save(newProject);
     }
 
-    // @Override
-    // public Project save(Project project)
-    // {
-    //     return projectRepository.save(project);
-    // }
+    @Override
+    public Project save(Project project)
+    {
+        return projectRepository.save(project);
+    }
+
+    @Override
+    public Project update(String cdProject, Project project)
+    {
+        var getProject = projectRepository.findById(cdProject);
+
+        if(!getProject.isPresent()) {
+            throw new RuntimeException("Project not found with id: " + cdProject);
+        }
+
+        var oldProject = getProject.get();
+
+        oldProject.setProjectTitle(project.getProjectTitle());
+        projectRepository.save(oldProject);
+        return oldProject;
+    }
+
+    @Override
+    public Project delete(String cdProject)
+    {
+        var getProject = projectRepository.findById(cdProject);
+
+        if(!getProject.isPresent()) {
+            throw new RuntimeException("Project not found with id: " + cdProject);
+        }
+
+        var oldProject = getProject.get();
+        projectRepository.delete(oldProject);
+        return oldProject;
+    }
 
     // @Override
     // public Project getByCd(String cdProject)

@@ -1,5 +1,8 @@
 package br.univille.microservgestaoprojetospesapplication.entities;
 
+
+import br.univille.microservgestaoprojetospesapplication.enums.statusEnum;
+
 import java.util.UUID;
 
 import org.springframework.data.annotation.Id;

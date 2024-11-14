@@ -7,4 +7,6 @@ public interface ProjectService
 {
     List<Project> getAll();
     Project save(Project project);
+    Project update(String cdProject, Project project);
+    Project delete(String cdProject);
 }
