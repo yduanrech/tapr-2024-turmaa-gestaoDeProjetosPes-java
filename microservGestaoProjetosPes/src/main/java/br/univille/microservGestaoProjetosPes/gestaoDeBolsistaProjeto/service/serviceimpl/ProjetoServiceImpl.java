@@ -34,5 +34,28 @@ public class ProjetoServiceImpl
 
         
         }
+
+        @Override
+        public Projeto update(String id, Projeto projeto) {
+           var buscaProjeto = repository.findById(id);
+           if (buscaProjeto.isPresent()){
+            var projetoAntigo = buscaProjeto.get();
+            //att os atributos
+            projetoAntigo.setNome(projeto.getNome());
+            repository.save(projetoAntigo);
+            return projetoAntigo;
+           }
+        }
+
+        @Override
+        public Projeto delete(String id) {
+            var buscaProjeto = repository.findById(id);
+            if(buscaProjeto.isPresent()){
+                var projetoAntigo = buscaProjeto.get();
+                repository.delete(projetoAntigo);
+                return projetoAntigo;
+            }
+            return null;
+        }
 }
 

@@ -7,4 +7,6 @@ import br.univille.microservGestaoProjetosPes.gestaoDeBolsistaProjeto.entity.Pro
 public interface ProjetoService {
     List<Projeto> getAll();
     Projeto save(Projeto projeto);
+    Projeto update(String id, Projeto projeto);
+    Projeto delete(String id);
 }
