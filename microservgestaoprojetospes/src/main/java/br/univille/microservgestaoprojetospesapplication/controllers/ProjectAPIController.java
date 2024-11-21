@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.azure.core.annotation.Patch;
 
 import br.univille.microservgestaoprojetospesapplication.entities.Project;
 import br.univille.microservgestaoprojetospesapplication.services.ProjectService;
